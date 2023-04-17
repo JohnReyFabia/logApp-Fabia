@@ -1,15 +1,5 @@
 <?php
-	require('config/config.php');
-	require('config/db.php');
 
-    $query = 'SELECT * FROM PERSON order by logdt desc';
-    $result = mysqli_query($conn, $query);
-    
-    if (mysqli_num_rows($result) > 0 ) {
-        $person = mysqli_fetch_all($result, MYSQLI_ASSOC );
-    } else {
-        echo 'There is no existing data.';
-        }
 ?>
 
 <?php include('inc/header.php'); ?>
@@ -29,7 +19,7 @@
 		
 			<div class="well">
                 <tbody>
-                <?php foreach($person as $person) : ?>
+                <?php foreach($persons as $person) : ?>
                     <tr>
                     <th scope="row"><?php echo $person['pid'];?></th>
                     <td><?php echo $person['lastname'];?></td>

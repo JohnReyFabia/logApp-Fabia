@@ -1,22 +1,8 @@
 <?php
-  require('config/config.php');
-  require('config/db.php');
+  
 
-  if(isset($_POST['submit'])){
-    $username = mysqli_real_escape_string($conn,$_POST['username']);
-    $password = mysqli_real_escape_string($conn,$_POST['password']);
-    
-    $query = "SELECT * FROM USERACCOUNT WHERE username = '$username' AND password = '$password'";
-    $result = mysqli_query($conn, $query);
-    
-    if (mysqli_num_rows($result) > 0) {
-      header('Location: guestbook-list.php');
-    } else {
-      echo '<div style="width:20%; margin: auto; text-align: center;">
-      Invalid username or password
-      </div>';
-    }
-  }
+
+
 ?>
 <?php include('inc/header.php'); ?>
   <br/>
@@ -38,5 +24,3 @@
     </form>
   </div>
 <?php include('inc/footer.php'); ?>
-
-
